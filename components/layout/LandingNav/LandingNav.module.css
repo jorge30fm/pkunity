@@ -1,7 +1,10 @@
 .nav {
-    color: white
+	color: white;
 }
 .nav ul li {
-    list-style: none;
-    display: inline-block;
+	list-style: none;
+	display: inline-block;
+}
+.burgerMenu {
+
 }
