@@ -5,6 +5,8 @@
 	list-style: none;
 	display: inline-block;
 }
-.burgerMenu {
-
+.logo {
+	position: relative;
+	width: 200px;
+	height: 200px
 }
