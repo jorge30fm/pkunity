@@ -2,7 +2,7 @@
 	--rust: #945e4a;
 	--blush: #ffc7b3;
 	--dusty-rose: #e09e87;
-	--forest-green: #3b9462;
+	--forest-green: #37aa93;
 	--aqua: #87e0ce;
 	--cream: #fff0ea;
 }
@@ -331,7 +331,6 @@
 /* BUTTONS */
 .btn {
 	background-color: #ffc7b3;
-	padding: 0.5em;
 	display: inline-block;
 	text-align: center;
 	text-decoration: none;

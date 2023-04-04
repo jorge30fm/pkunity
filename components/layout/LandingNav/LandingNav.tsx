@@ -5,17 +5,18 @@ import { FaBars } from "react-icons/fa";
 
 function LandingNav() {
 	return (
-		<nav className={`${styles.nav} `}>
+		<nav className={`${styles.nav} bg-forest-green`}>
 			<ul className="grid-container pt-3 pr-3 pb-3 pl-3">
 				<li className="col-4 start-1">
-					<button className="btn">Sign Up</button>
+					<button className={`btn ${styles.signupBtn}`}>Sign Up</button>
 				</li>
-				<li className={`${styles.logo} col-2 start-6 bg-blush logo`}>
+				<li className={`${styles.logo} col-2 start-7  logo`}>
 					<Image
 						src="/logo.svg"
 						fill
-						object-fit="cover"
+						object-fit="contain"
 						alt=""
+						className={`${styles.logoImg} bg-blush`}
 					/>
 				</li>
 				<li className="col-1 start-12">

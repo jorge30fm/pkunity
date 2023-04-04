@@ -7,6 +7,22 @@
 }
 .logo {
 	position: relative;
-	width: 200px;
-	height: 200px
+	height: 40px;
+	width: 40px;
+}
+
+.logoImg {
+	padding: 3px;
+	border-radius: 50%;
+	border: solid 1px black;
+}
+.signupBtn {
+	height: 40px;
+	padding: 0 1em;
+}
+.burgerMenu{
+	font-size: 40px;
+	opacity: 80%;
+	text-align: center;
+	padding: 5px;
 }
