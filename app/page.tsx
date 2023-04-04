@@ -11,9 +11,9 @@ export default function Home() {
 	return (
 		<main>
 			<LandingNav />
-			<section>
-				<h1>PKUnity:</h1>
-				<h2>Your PKU Journey Companion</h2>
+			<section className={styles.landingSection}>
+				<h1 className={styles.mainHeading}>PKUnity:</h1>
+				<h2 className={styles.moto}>Your PKU Journey Companion</h2>
 				<p>
 					Welcome to PKUnity, your PKU journey companion. We understand that
 					managing PKU can be a challenging journey, but you are not alone. We
@@ -24,7 +24,7 @@ export default function Home() {
 					us today and discover a community of support and understnding where
 					you can thrive.
 				</p>
-				<Link href="/signup">Join our Community!</Link>
+				<div className={`flex justify-center mt-4`}><Link href="/signup" className={`${styles.ctaBtn} btn`}>Join our Community!</Link></div>
 			</section>
       <section></section>
       <Footer />
