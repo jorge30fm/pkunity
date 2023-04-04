@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./LandingNav.module.css";
 import { FaBars } from "react-icons/fa";
+import Logo from '../../logo/Logo'
 
 function LandingNav() {
 	return (
@@ -10,14 +11,8 @@ function LandingNav() {
 				<li className="col-4 start-1">
 					<button className={`btn ${styles.signupBtn}`}>Sign Up</button>
 				</li>
-				<li className={`${styles.logo} col-2 start-7  logo`}>
-					<Image
-						src="/logo.svg"
-						fill
-						object-fit="contain"
-						alt=""
-						className={`${styles.logoImg} bg-blush`}
-					/>
+				<li className={` col-2 start-7  `}>
+					<Logo />
 				</li>
 				<li className="col-1 start-12">
 					<FaBars className={styles.burgerMenu} />

@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import classes from "./Footer.module.css";
+import styles from "./Footer.module.css";
+import Logo from "../../logo/Logo";
 
 function Footer() {
 	return (
 		<footer>
 			<div>
-				<div>Logo</div>
+				<Logo/>
 				<h1>PKUnity</h1>
 				<div>
 					<ul>
