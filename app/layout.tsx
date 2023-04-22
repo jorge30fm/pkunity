@@ -1,4 +1,5 @@
 import './globals.css'
+import { Providers } from './GlobalRedux/provider'
 
 export const metadata = {
   title: 'PKUnity',
@@ -12,7 +13,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers></body>
     </html>
   )
 }

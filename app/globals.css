@@ -1,9 +1,10 @@
 :root {
+	--dark: #3f2a23;
 	--rust: #945e4a;
 	--blush: #ffc7b3;
 	--dusty-rose: #e09e87;
-	--forest-green: #37aa93;
-	--aqua: #87e0ce;
+	--forest-green: #47d6ba;
+	--aqua: #99e0d2;
 	--cream: #fff0ea;
 }
 
@@ -12,6 +13,8 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	color: var(--dark)
 }
 
 /* Grid column layout */
@@ -104,6 +107,18 @@
 
 /* UTILITY CLASSES */
 /* Margin and Padding */
+.mt-auto {
+	margin-top: auto;
+}
+.mb-auto {
+	margin-bottom: auto;
+}
+.mr-auto {
+	margin-right: auto;
+}
+.ml-auto {
+	margin-left: auto;
+}
 .mt-1 {
 	margin-top: 0.25rem;
 }
@@ -260,6 +275,9 @@
 .justify-space-between {
 	justify-content: space-between;
 }
+.justify-space-around {
+	justify-content: space-around;
+}
 
 .align-start {
 	align-items: flex-start;
@@ -305,6 +323,9 @@
 .text-lowercase {
 	text-transform: lowercase;
 }
+.text-decor {
+	text-decoration: none;
+}
 
 /* Border Utilities */
 .border {
@@ -326,6 +347,24 @@
 .border-left {
 	border-left: 1px solid black;
 }
+
+/* Width Utilities */
+.w-100 {
+	width: 100%;
+}
+
+.w-50 {
+	width: 50%;
+}
+
+.w-33 {
+	width: 33.33%;
+}
+
+.w-25 {
+	width: 25%;
+}
+/* end of width utilities */
 /* END OF UTILITY CLASSES */
 /* -------------------------------------------------------- */
 
@@ -385,4 +424,7 @@
 }
 .color-cream {
 	color: var(--cream);
+}
+.color-dark {
+	color: var(--dark);
 }

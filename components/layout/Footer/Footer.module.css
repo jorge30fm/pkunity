@@ -1,6 +1,24 @@
-.footerLogo {
-    height: 40px;
-    width: 40px;
-    position: relative;
 
+.footer {
+    font-size: 1em;
+    min-height: 100vh;
+}
+.socials {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+.noBullets {
+    list-style-type: none;
+}
+
+.noBullets li a {
+    text-decoration: none;
+color: var(--dark);
+cursor: pointer;
+}
+.linksTitle {
+    font-size: 1em;
 }

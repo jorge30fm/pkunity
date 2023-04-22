@@ -13,3 +13,10 @@
 .ctaBtn {
     padding: 2.5% 20%
 }
+.card {
+    border: solid 1px var(--rust);
+    border-radius: .5em;
+}
+.whatIsPKU {
+    font-size: .9em;
+}

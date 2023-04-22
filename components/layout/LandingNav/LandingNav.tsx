@@ -1,15 +1,17 @@
-import Link from "next/link";
-import Image from "next/image";
 import styles from "./LandingNav.module.css";
 import { FaBars } from "react-icons/fa";
-import Logo from '../../logo/Logo'
+import Link from "next/link";
+import Logo from "../../logo/Logo";
+import Button from "@/components/ui/button/Button";
 
-function LandingNav() {
+const LandingNav = () => {
 	return (
 		<nav className={`${styles.nav} bg-forest-green`}>
 			<ul className="grid-container pt-3 pr-3 pb-3 pl-3">
 				<li className="col-4 start-1">
-					<button className={`btn ${styles.signupBtn}`}>Sign Up</button>
+					<Link href="/signup">
+						<Button padding=".5em">Sign Up</Button>
+					</Link>
 				</li>
 				<li className={` col-2 start-7  `}>
 					<Logo />
@@ -20,7 +22,7 @@ function LandingNav() {
 			</ul>
 		</nav>
 	);
-}
+};
 //q: how to add svg file saved in public folder
 // a: https://stackoverflow.com/questions/62640609/how-to-add-svg-file-saved-in-public-folder
 // a: https://stackoverflow.com/questions/62640609/how-to-add-svg-file-saved-in-public-folder   <Image src="/images/logo.svg" alt="logo" width={100} height={100} />
