@@ -1,8 +1,8 @@
 .socialsBtn {
-border: 1px solid var(--rust);
-border-radius: 2em;
-color: var(--rust);
-width: 200px;
-display: block;
-text-align: left
+	border: none;
+	border-radius: 2em;
+	width: 200px;
+	display: block;
+	text-align: left;
+	background: white;
 }

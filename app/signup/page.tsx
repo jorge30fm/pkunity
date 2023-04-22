@@ -11,6 +11,7 @@ import {
 } from "../GlobalRedux/Features/signup/signupSlice";
 // components
 import SignupButtons from "@/components/ui/signupButtons/signupButtons";
+import Button from "@/components/ui/button/Button";
 import Logo from "@/components/logo/Logo";
 // styles
 import styles from "./page.module.css";
@@ -44,101 +45,103 @@ const SignupPage = () => {
 	);
 
 	return (
-		<div className={`grid-container pt-4 bg-forest-green ${styles.section}`}>
-			<span className="col-12 ml-auto mr-auto">
-				<Logo
-					width="7rem"
-					height="7rem"
-				/>
-			</span>
-			{/* social media sign up buttons */}
-			<div className={`col-12 ${styles.socialsBtns}`}>
-				<SignupButtons provider="apple" />
-				<SignupButtons provider="google" />
-				<SignupButtons provider="facebook" />
-			</div>
-			{/* adds a horizontal line with the word 'or' in the middle */}
-			<div
-				className={`col-12 flex justify-center ml-4 mr-4 ${styles.division}`}
-			>
-				<div className={` col-5 flex align-center ${styles.lineContainer}`}>
-					<div className={`${styles.line}`}></div>
+		<div className="bg-forest-green">
+			<div className={`grid-container pt-4 ${styles.section}`}>
+				<span className="col-12 ml-auto mr-auto">
+					<Logo
+						width="7rem"
+						height="7rem"
+					/>
+				</span>
+				{/* social media sign up buttons */}
+				<div className={`col-12 ${styles.socialsBtns}`}>
+					<SignupButtons provider="apple" />
+					<SignupButtons provider="google" />
+					<SignupButtons provider="facebook" />
 				</div>
-				<p className={` col-1 text-center ${styles.or}`}>or</p>
+				{/* adds a horizontal line with the word 'or' in the middle */}
 				<div
-					className={` col-5 flex align-center mr-auto ${styles.lineContainer}`}
+					className={`col-12 flex justify-center ml-4 mr-4 ${styles.division}`}
 				>
-					<div className={`${styles.line}`}></div>
+					<div className={` col-5 flex align-center ${styles.lineContainer}`}>
+						<div className={`${styles.line}`}></div>
+					</div>
+					<p className={` col-1 text-center ${styles.or}`}>or</p>
+					<div
+						className={` col-5 flex align-center mr-auto ${styles.lineContainer}`}
+					>
+						<div className={`${styles.line}`}></div>
+					</div>
 				</div>
 			</div>
-
 			<form
 				onSubmit={handleSubmit}
-				className="grid-container col-12"
+				className=" ml-4 mr-4 pl-4 pr-4"
 			>
 				{/* first and last name */}
 				<div className="grid-container col-12">
-					<label className="col-6">
-						First Name
+					<div className="col-6 start-1">
+						<label>First Name</label>
 						<input
 							type="text"
 							placeholder="First Name"
+							className={`w-100 ${styles.formInput}`}
 							name="firstName"
 							value={formValues.firstName}
 							onChange={handleChange}
 						/>
-					</label>
-					<label className="col-6">
-						Last Name
+					</div>
+					<div className="col-6">
+						<label>Last Name</label>
 						<input
 							type="text"
 							placeholder="Last Name"
+							className={`w-100 ${styles.formInput}`}
 							name="lastName"
 							value={formValues.lastName}
 							onChange={handleChange}
 						/>
-					</label>
+					</div>
 				</div>
 				{/* email */}
-				<div className="col-12">
-					<label>
-						Email
-						<input
-							type="email"
-							placeholder="Email"
-							name="email"
-							value={formValues.email}
-							onChange={handleChange}
-						/>
-					</label>
+				<div className="grid-container no-gap col-12">
+					<label className="col-12">Email</label>
+					<input
+						type="email"
+						placeholder="Email"
+						className={`col-12 ${styles.formInput}`}
+						name="email"
+						value={formValues.email}
+						onChange={handleChange}
+					/>
 				</div>
 				{/* password */}
-				<div className="col-12">
-					<label>
-						Password
-						<input
-							type="password"
-							placeholder="Password"
-							name="password"
-							value={formValues.password}
-							onChange={handleChange}
-						/>
-					</label>
+				<div className="grid-container no-gap col-12">
+					<label className="col-12">Password</label>
+					<input
+						type="password"
+						placeholder="Password"
+						className={`col-12 ${styles.formInput}`}
+						name="password"
+						value={formValues.password}
+						onChange={handleChange}
+					/>
 				</div>
 				{/* confirm password */}
-				<div className="col-12">
-					<label>
-						Confirm Password
-						<input
-							type="password"
-							placeholder="Confirm Password"
-							name="confirmPassword"
-							value={formValues.confirmPassword}
-							onChange={handleChange}
-						/>
-					</label>
+				<div className="grid-container no-gap col-12">
+					<label className="col-12">Confirm Password</label>
+					<input
+						type="password"
+						placeholder="Confirm Password"
+						className={`col-12 ${styles.formInput}`}
+						name="confirmPassword"
+						value={formValues.confirmPassword}
+						onChange={handleChange}
+					/>
 				</div>
-				<button type="submit">Submit</button>
+				<div className="mr-auto ml-auto mt-3 ">
+					<Button padding=".8em 2em" fontSize="1.2rem">Sign up</Button>
+				</div>
 			</form>
 		</div>
 	);

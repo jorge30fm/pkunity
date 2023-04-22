@@ -23,7 +23,7 @@ const SocialLoginComponent: React.FC<SocialLoginProps> = ({ provider }) => {
 
   return (
     <button
-      className={` mt-3 mr-auto ml-auto   bg-cream  pt-2 pb-2 pr-2 pl-3 ${styles.socialsBtn}`}
+      className={` mt-3 mr-auto ml-auto  pt-2 pb-2 pr-2 pl-3 ${styles.socialsBtn}`}
     >
       {icon} {buttonText}
     </button>

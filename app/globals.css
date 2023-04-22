@@ -14,7 +14,8 @@
 	box-sizing: border-box;
 	font-family: Arial, Helvetica, sans-serif;
 	text-decoration: none;
-	color: var(--dark)
+	color: var(--dark);
+	scroll-behavior: smooth;
 }
 
 /* Grid column layout */
@@ -26,7 +27,9 @@
 .grid-col {
 	padding: 1rem;
 }
-
+.no-gap {
+	grid-gap: 0;
+}
 /* Define column widths */
 .col-1 {
 	grid-column: span 1 / span 1;
