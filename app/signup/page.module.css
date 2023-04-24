@@ -12,12 +12,31 @@
 .lineContainer {
 	width: 100%;
 }
-.section {
-	width: 100vw;
-}
+
 .formInput {
-padding: 1em 1em;
-border: none;
-border-radius: 1em;
-margin-bottom: 1em;
+	flex: 1;
+	width: calc(100% - .7em);
+	border: none;
+	font-size: 0.7rem;
+	padding: 1em 1em;
+	color: var(--dark);
+
+}
+.formInput:focus {
+	outline: none;
+}
+.label {
+	font-size: 0.8rem;
+}
+.inputWrapper {
+	background-color: white;
+	border-radius: .5em;
+	overflow: hidden;
+	margin-bottom: .8em;
+	color: var(--dark)
+}
+
+.icon {
+	width:.7em;
+	height: 1em;
 }

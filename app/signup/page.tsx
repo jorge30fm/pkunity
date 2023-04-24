@@ -15,6 +15,8 @@ import Button from "@/components/ui/button/Button";
 import Logo from "@/components/logo/Logo";
 // styles
 import styles from "./page.module.css";
+// Icons
+import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
 
 const SignupPage = () => {
 	const dispatch = useDispatch();
@@ -76,27 +78,32 @@ const SignupPage = () => {
 			</div>
 			<form
 				onSubmit={handleSubmit}
-				className=" ml-4 mr-4 pl-4 pr-4"
+				className=" ml-4 mr-4 pl-4 pr-4 mt-2"
 			>
 				{/* first and last name */}
-				<div className="grid-container col-12">
-					<div className="col-6 start-1">
-						<label>First Name</label>
+				<div className="grid-container no-gap col-12">
+					<label className={`col-12  ${styles.label}`}>Name</label>
+
+					<div
+						className={`flex justify-center align-center col-5 ${styles.inputWrapper}`}
+					>
+						<FaUserAlt className={`${styles.icon} ml-2`} />
 						<input
 							type="text"
-							placeholder="First Name"
+							placeholder="First"
 							className={`w-100 ${styles.formInput}`}
 							name="firstName"
 							value={formValues.firstName}
 							onChange={handleChange}
 						/>
 					</div>
-					<div className="col-6">
-						<label>Last Name</label>
+					<div
+						className={`flex justify-center align-center col-6 start-7 ${styles.inputWrapper}`}
+					>
 						<input
 							type="text"
-							placeholder="Last Name"
-							className={`w-100 ${styles.formInput}`}
+							placeholder="Last"
+							className={`w-75 ${styles.formInput}`}
 							name="lastName"
 							value={formValues.lastName}
 							onChange={handleChange}
@@ -105,42 +112,65 @@ const SignupPage = () => {
 				</div>
 				{/* email */}
 				<div className="grid-container no-gap col-12">
-					<label className="col-12">Email</label>
-					<input
-						type="email"
-						placeholder="Email"
-						className={`col-12 ${styles.formInput}`}
-						name="email"
-						value={formValues.email}
-						onChange={handleChange}
-					/>
+					<label className={`col-12 ${styles.label}`}>Email</label>
+					<div
+						className={`flex justify-between align-center col-12 ${styles.inputWrapper}`}
+					>
+						<FaEnvelope className={`${styles.icon} ml-2`} />
+						<input
+							type="text"
+							placeholder="Email"
+							className={`${styles.formInput}`}
+							name="email"
+							value={formValues.email}
+							onChange={handleChange}
+						/>
+					</div>
 				</div>
 				{/* password */}
-				<div className="grid-container no-gap col-12">
-					<label className="col-12">Password</label>
-					<input
-						type="password"
-						placeholder="Password"
-						className={`col-12 ${styles.formInput}`}
-						name="password"
-						value={formValues.password}
-						onChange={handleChange}
-					/>
+				<div className="grid-container no-gap col-12 in">
+					<label className={`col-12 ${styles.label}`}>Password</label>
+					<div
+						className={`flex justify-between align-center col-12 ${styles.inputWrapper}`}
+					>
+						<FaLock className={`${styles.icon} ml-2`} />
+						<input
+							type="password"
+							placeholder="Password"
+							className={`col-12 ${styles.formInput}`}
+							name="password"
+							value={formValues.password}
+							onChange={handleChange}
+						/>
+					</div>
 				</div>
 				{/* confirm password */}
 				<div className="grid-container no-gap col-12">
-					<label className="col-12">Confirm Password</label>
-					<input
-						type="password"
-						placeholder="Confirm Password"
-						className={`col-12 ${styles.formInput}`}
-						name="confirmPassword"
-						value={formValues.confirmPassword}
-						onChange={handleChange}
-					/>
+					<label className={`col-12 ${styles.label}`}>Confirm Password</label>
+					<div
+						className={`flex justify-between align-center col-12 ${styles.inputWrapper}`}
+					>
+						<FaLock
+							color="rgba(0, 0, 0, 0.5)"
+							className={`${styles.icon} ml-2`}
+						/>
+						<input
+							type="password"
+							placeholder="Confirm Password"
+							className={`col-12 ${styles.formInput}`}
+							name="confirmPassword"
+							value={formValues.confirmPassword}
+							onChange={handleChange}
+						/>
+					</div>
 				</div>
 				<div className="mr-auto ml-auto mt-3 ">
-					<Button padding=".8em 2em" fontSize="1.2rem">Sign up</Button>
+					<Button
+						padding=".8em 2em"
+						fontSize="1.2rem"
+					>
+						Sign up
+					</Button>
 				</div>
 			</form>
 		</div>
