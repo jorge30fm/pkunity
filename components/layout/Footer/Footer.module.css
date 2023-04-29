@@ -16,7 +16,6 @@
 
 .noBullets li a {
     text-decoration: none;
-color: var(--dark);
 cursor: pointer;
 }
 .linksTitle {

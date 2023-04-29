@@ -6,7 +6,7 @@ import Button from "@/components/ui/button/Button";
 
 const LandingNav = () => {
 	return (
-		<nav className={`${styles.nav} bg-forest-green`}>
+		<nav className={`${styles.nav} `}>
 			<ul className="grid-container pt-3 pr-3 pb-3 pl-3">
 				<li className="col-4 start-1">
 					<Link href="/signup">

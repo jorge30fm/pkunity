@@ -23,7 +23,7 @@ import {
 const Footer = () => {
 	return (
 		<footer
-			className={`flex flex-col  align-center bg-aqua color-dark ${styles.footer}`}
+			className={`flex flex-col  align-center ${styles.footer}`}
 		>
 			{/* contains logo, website name and contact info */}
 			<div className="flex flex-col align-center">

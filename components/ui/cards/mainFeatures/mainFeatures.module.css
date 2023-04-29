@@ -1,5 +1,4 @@
 .card {
-    border: solid 1px var(--rust);
     border-radius: 0.5em;
 }
 .logo {

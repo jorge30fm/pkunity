@@ -1,3 +1,4 @@
+
 import {
 	FaChartBar,
 	FaPencilAlt,
@@ -8,7 +9,6 @@ import {
 	FaArrowRight,
 } from "react-icons/fa";
 import Link from "next/link";
-import { Inter } from "next/font/google";
 
 //styles
 import styles from "./page.module.css";
@@ -19,7 +19,7 @@ import Footer from "@/components/layout/Footer/Footer";
 import Card from "@/components/ui/cards/mainFeatures/mainFeatures";
 import Button from "@/components/ui/button/Button";
 
-const inter = Inter({ subsets: ["latin"] });
+
 
 const Home = () => {
 	const cardsData = [
@@ -62,12 +62,12 @@ const Home = () => {
 	];
 
 	return (
-		<main className="color-dark">
+		<main>
 			<LandingNav />
 			{/* Hero Section */}
-			<section className={styles.landingSection}>
-				<h1 className={styles.mainHeading}>PKUnity:</h1>
-				<h2 className={styles.moto}>Your PKU Journey Companion</h2>
+			<section className={`${styles.landingSection} bg-secondary`}>
+				<h1 className={`${styles.mainHeading} text-primary`}>PKUnity:</h1>
+				<h2 className={`${styles.moto} text-secondary-light`}>Your PKU Journey Companion</h2>
 				<p>
 					Welcome to PKUnity, your PKU journey companion. We understand that
 					managing PKU can be a challenging journey, but you are not alone. We
@@ -86,9 +86,9 @@ const Home = () => {
 			</section>
 			{/* Main Features Section */}
 			<section className={styles.landingSection}>
-				<div className={`bg-cream pt-3 pb-3 pr-4 pl-4 ${styles.card}`}>
+				<div className={` pt-3 pb-3 pr-4 pl-4 ${styles.card}`}>
 					<h2 className="text-center">What is PKU?</h2>
-					<p className={`color-rust mt-2 ${styles.whatIsPKU}`}>
+					<p className={` mt-2 ${styles.whatIsPKU}`}>
 						Phenylketonuria (PKU) is a genetic disorder that prevents the body
 						from breaking down an amino acid called phenylalanine.
 						<br />

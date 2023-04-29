@@ -1,22 +1,22 @@
 .landingSection {
-    padding: 6rem 3rem 3rem 3rem;
-    background-color: var(--forest-green);
+	padding: 6rem 3rem 3rem 3rem;
+	background-color: var(--forest-green);
 }
 .mainHeading {
-    font-size: 2em;
+	font-size: 2em;
 }
 .moto {
-    font-size: 1.5em;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
+	font-size: 1.5em;
+	font-weight: 300;
+	margin-bottom: 1.5rem;
 }
 .ctaBtn {
-    padding: 2.5% 20%
+	padding: 2.5% 20%;
 }
 .card {
-    border: solid 1px var(--rust);
-    border-radius: .5em;
+	border: solid 1px var(--rust);
+	border-radius: 0.5em;
 }
 .whatIsPKU {
-    font-size: .9em;
+	font-size: 0.9em;
 }
