@@ -1,4 +1,3 @@
-
 import {
 	FaChartBar,
 	FaPencilAlt,
@@ -18,7 +17,9 @@ import LandingNav from "@/components/layout/LandingNav/LandingNav";
 import Footer from "@/components/layout/Footer/Footer";
 import Card from "@/components/ui/cards/mainFeatures/mainFeatures";
 import Button from "@/components/ui/button/Button";
-
+// mui components
+import { AppBar } from "./components/@mui/material/index";
+import { MenuIcon } from "./components/@mui/icons-material/index";
 
 
 const Home = () => {
@@ -63,11 +64,15 @@ const Home = () => {
 
 	return (
 		<main>
-			<LandingNav />
+			<AppBar>
+				<MenuIcon />
+			</AppBar>
 			{/* Hero Section */}
 			<section className={`${styles.landingSection} bg-secondary`}>
 				<h1 className={`${styles.mainHeading} text-primary`}>PKUnity:</h1>
-				<h2 className={`${styles.moto} text-secondary-light`}>Your PKU Journey Companion</h2>
+				<h2 className={`${styles.moto} text-secondary-light`}>
+					Your PKU Journey Companion
+				</h2>
 				<p>
 					Welcome to PKUnity, your PKU journey companion. We understand that
 					managing PKU can be a challenging journey, but you are not alone. We
