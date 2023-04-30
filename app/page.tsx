@@ -8,18 +8,16 @@ import {
 	FaArrowRight,
 } from "react-icons/fa";
 import Link from "next/link";
-
+import logo from "@/public/logo.svg";
 //styles
 import styles from "./page.module.css";
 
 //components
 import LandingNav from "@/components/layout/LandingNav/LandingNav";
+
 import Footer from "@/components/layout/Footer/Footer";
 import Card from "@/components/ui/cards/mainFeatures/mainFeatures";
-import Button from "@/components/ui/button/Button";
-// mui components
-import { AppBar } from "./components/@mui/material/index";
-import { MenuIcon } from "./components/@mui/icons-material/index";
+
 
 
 const Home = () => {
@@ -64,9 +62,7 @@ const Home = () => {
 
 	return (
 		<main>
-			<AppBar>
-				<MenuIcon />
-			</AppBar>
+			<LandingNav/>
 			{/* Hero Section */}
 			<section className={`${styles.landingSection} bg-secondary`}>
 				<h1 className={`${styles.mainHeading} text-primary`}>PKUnity:</h1>
@@ -84,9 +80,9 @@ const Home = () => {
 					you can thrive.
 				</p>
 				<div className={`flex justify-center mt-4`}>
-					<Link href="/signup">
+					{/* <Link href="/signup">
 						<Button padding=".5em 4em">Join our Community!</Button>
-					</Link>
+					</Link> */}
 				</div>
 			</section>
 			{/* Main Features Section */}
@@ -105,11 +101,11 @@ const Home = () => {
 						and productive lives.
 					</p>
 					<div className="flex justify-end">
-						<Link href="#">
+						{/* <Link href="#">
 							<Button padding=".5em 1em">
 								Learn More <FaArrowRight />
 							</Button>
-						</Link>
+						</Link> */}
 					</div>
 				</div>
 				{cardsData.map((card, index) => (
