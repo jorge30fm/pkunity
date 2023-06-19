@@ -9,15 +9,22 @@ import {
 	Toolbar,
 	Button,
 	IconButton,
-	Box
-} from "../../../app/components/@mui/material/index";
-import { MenuIcon } from "../../../app/components/@mui/icons-material/index";
+	Box,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const LandingNav = () => {
 	return (
-		<AppBar position="static">
+		<AppBar  className={styles.overlay} color="transparent" sx={{zIndex: 1200}}>
 			<Container maxWidth="xl">
-				<Toolbar disableGutters sx={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+				<Toolbar
+					disableGutters
+					sx={{
+						display: "flex",
+						justifyContent: "space-between",
+						alignItems: "center",
+					}}
+				>
 					<Button
 						color="secondary"
 						variant="contained"
@@ -25,16 +32,17 @@ const LandingNav = () => {
 					>
 						Sign Up
 					</Button>
-					<Box sx={{flexGrow: 1, display: "flex", justifyContent: "center"}}>
+					<Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
 						<img
 							src="/logo.svg"
 							alt="logo"
+							className={styles.logo}
 							height={40}
 							width={40}
 						/>
 					</Box>
 					<IconButton>
-						<MenuIcon />
+						<MenuIcon sx={{color:'white'}} />
 					</IconButton>
 				</Toolbar>
 			</Container>

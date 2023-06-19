@@ -1,18 +1,13 @@
-.nav {
-	color: white;
+.logo {
+	box-shadow: rgb(0, 0, 0) 0px 0px 2px 3px;
+	border-radius: 50%;
+background-color: var(--bg-secondary-lighter);
 }
-.nav ul li {
-	list-style: none;
-	display: inline-block;
-}
-
-.signupBtn {
-	height: 40px;
-}
-
-.burgerMenu{
-	font-size: 40px;
-	opacity: 80%;
-	text-align: center;
-	padding: 5px;
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(23, 68, 68, 0.521);
+	transition: opacity 500ms;
 }

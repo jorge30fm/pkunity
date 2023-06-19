@@ -1,3 +1,4 @@
+"use client";
 import {
 	FaChartBar,
 	FaPencilAlt,
@@ -18,9 +19,14 @@ import LandingNav from "@/components/layout/LandingNav/LandingNav";
 import Footer from "@/components/layout/Footer/Footer";
 import Card from "@/components/ui/cards/mainFeatures/mainFeatures";
 
-
+// mui components
+import { Container, Button, Typography, Box } from "@mui/material";
+import { primaryLight, white } from "../config/mui/themes";
+import { useTheme } from "@mui/material/styles";
 
 const Home = () => {
+	const theme = useTheme();
+
 	const cardsData = [
 		{
 			logo: <FaChartBar />,
@@ -62,34 +68,83 @@ const Home = () => {
 
 	return (
 		<main>
-			<LandingNav/>
+			<LandingNav />
 			{/* Hero Section */}
-			<section className={`${styles.landingSection} bg-secondary`}>
-				<h1 className={`${styles.mainHeading} text-primary`}>PKUnity:</h1>
-				<h2 className={`${styles.moto} text-secondary-light`}>
-					Your PKU Journey Companion
-				</h2>
-				<p>
-					Welcome to PKUnity, your PKU journey companion. We understand that
-					managing PKU can be a challenging journey, but you are not alone. We
-					are here to provide you with the resources and support you need to
-					navitate your PKU journey with ease. Our website is a place where you
-					can connect with others in the PKU community, track your levels, log
-					your food and protein intake, view and create recipes, amd ,more. Join
-					us today and discover a community of support and understnding where
-					you can thrive.
-				</p>
-				<div className={`flex justify-center mt-4`}>
-					{/* <Link href="/signup">
-						<Button padding=".5em 4em">Join our Community!</Button>
-					</Link> */}
-				</div>
-			</section>
-			{/* Main Features Section */}
-			<section className={styles.landingSection}>
-				<div className={` pt-3 pb-3 pr-4 pl-4 ${styles.card}`}>
-					<h2 className="text-center">What is PKU?</h2>
-					<p className={` mt-2 ${styles.whatIsPKU}`}>
+			<Container
+				maxWidth="xl"
+				sx={{
+					backgroundImage: `url('./hero.png')`,
+					backgroundRepeat: "no-repeat",
+					backgroundPosition: "center",
+					backgroundSize: "cover",
+					height: "350vh",
+					padding: "2rem, 0, 0, 0",
+				}}
+			>
+				{/* Main titles of the landing page */}
+				<Box pt={4}>
+					<Typography
+						variant="h1"
+						fontWeight="bold"
+						pt={4}
+						pl={2}
+						sx={{ color: white }}
+					>
+						PKUnity
+					</Typography>
+					<Typography
+						variant="h2"
+						pl={2}
+						fontWeight="bold"
+						sx={{ color: white }}
+					>
+						Your PKU Journey Companion
+					</Typography>
+					{/* call to action */}
+					<Typography
+						mt={4}
+						pl={2}
+						pr={2}
+						className={styles.overlay}
+					>
+						Managing PKU can be a challenging journey, but you are not alone. We
+						are here to provide you with the resources and support you need to
+						navitate your PKU journey with ease.
+						<br></br>
+						<br></br>Join us today and discover a community of support and
+						understnding where you can thrive.
+					</Typography>
+				</Box>
+				{/* call to action button */}
+				<Box
+					mt={3}
+					display="flex"
+					justifyContent="center"
+				>
+					<Button
+						color="secondary"
+						variant="contained"
+						size="large"
+					>
+						Join our Community!
+					</Button>
+				</Box>
+				{/* empty box to adjust positioning for the next element */}
+				<Box sx={{ height: "30rem" }}></Box>
+				{/* PKU information element */}
+				<Box className={` pt-3 pb-3 pr-4 pl-4 ${styles.card} ${styles.glass}`}>
+					<Typography
+						variant="h2"
+						color="white"
+						className="text-center"
+					>
+						What is PKU?
+					</Typography>
+					<Typography
+						pt={1}
+						color="white"
+						className={` mt-2 ${styles.whatIsPKU} `}
+					>
 						Phenylketonuria (PKU) is a genetic disorder that prevents the body
 						from breaking down an amino acid called phenylalanine.
 						<br />
@@ -99,24 +154,79 @@ const Home = () => {
 						seizures, and other serious health problems. However, with early
 						detection and careful management, people with PKU can live healthy
 						and productive lives.
-					</p>
-					<div className="flex justify-end">
-						{/* <Link href="#">
-							<Button padding=".5em 1em">
-								Learn More <FaArrowRight />
-							</Button>
-						</Link> */}
-					</div>
-				</div>
-				{cardsData.map((card, index) => (
-					<Card
-						key={index}
-						logo={card.logo}
-						title={card.title}
-						paragraph={card.paragraph}
-					/>
-				))}
-			</section>
+					</Typography>
+					<Box
+						mt={3}
+						display="flex"
+						justifyContent="center"
+					>
+						<Button
+							color="secondary"
+							variant="contained"
+							size="large"
+						>
+							Learn More
+						</Button>
+					</Box>
+				</Box>
+				{/* empty box to adjust positioning for the next element */}
+				<Box sx={{ height: "10rem" }}></Box>
+				<Box>
+					{cardsData.map((card, index) => (
+						<Card
+							key={index}
+							logo={card.logo}
+							title={card.title}
+							paragraph={card.paragraph}
+						/>
+					))}
+				</Box>
+				{/* empty box to adjust positioning for the next element */}
+
+				<Box
+					mt={15}
+					pl={2}
+					pr={2}
+				>
+					<Typography
+						variant="h3"
+						sx={{ color: "white", textAlign: "center" }}
+					>
+						You are a
+					</Typography>
+					<Typography
+						mt={1}
+						mb={2}
+						variant="h2"
+						sx={{ color: "white", textAlign: "center" }}
+					>
+						WARRIOR.
+					</Typography>
+					<Typography
+						mt={1}
+						variant="h4"
+						sx={{ color: "white", textAlign: "center" }}
+					>
+						PKU is just a part of your incredible journey.
+					</Typography>
+					<Box
+						mt={2}
+						display="flex"
+						justifyContent="center"
+					>
+						<Button
+							variant="contained"
+							sx={{ mr: "auto", ml: "auto" }}
+						>
+							<Typography sx={{ color: "white", textAlign: "center" }}>
+								Join us and share your story
+							</Typography>
+						</Button>
+					</Box>
+				</Box>
+			</Container>
+			{/* Main Features Section */}
+
 			<Footer />
 		</main>
 	);

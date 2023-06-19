@@ -9,7 +9,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ logo, title, paragraph }) => {
 	return (
-		<div className={`grid-container mt-4 pt-3 pb-3 pr-3 pl-3 ${styles.card}`}>
+		<div className={`grid-container mt-4 pt-3 pb-3 pr-3 pl-3 ${styles.card} ${styles.glass}`}>
 			{}
 			<div
 				className={` col-3 mt-auto mb-auto ${styles.logo}`}>

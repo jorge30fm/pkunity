@@ -1,15 +1,26 @@
-import { createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material";
 
 import { ThemeOptions } from '@mui/material/styles';
+
+const primaryLight = "#4FADB3";
+const primaryDark = "#196B70";
+const secondaryLight = "#C76374";
+const secondaryDark = "#822A39";
+const white ="#f5f5f5"
+const black ="#1a1a1a"
 
 const themeOptions: ThemeOptions = {
   palette: {
     mode: 'light',
     primary: {
-      main: '#009688',
+      main: '#2499A0',
+      light: primaryLight,
+      dark: primaryDark,
     },
     secondary: {
-      main: '#ff8c4a',
+      main: '#BA3D52',
+      light: secondaryLight,
+      dark: secondaryDark,
     },
     background: {
       default: '#f5f5f5',
@@ -37,6 +48,7 @@ const themeOptions: ThemeOptions = {
     borderRadius: 4,
   },
 };
-const theme = createTheme(themeOptions);
+let theme = createTheme(themeOptions);
+theme = responsiveFontSizes(theme);
 
-export default theme;
+export {theme, primaryLight, primaryDark, secondaryLight, secondaryDark, white, black};
