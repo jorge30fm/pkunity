@@ -1,116 +1,276 @@
 // external modules
 import Link from "next/link";
-import Image from "next/image";
 
 // styles
 import styles from "./Footer.module.css";
 
 // internal components
 import Logo from "../../logo/Logo";
-import Button from "../../ui/button/Button";
+
+//external components
+import { Button, Typography, Grid } from "@mui/material";
 
 // icons
 import {
-	FaFacebookSquare,
-	FaInstagram,
-	FaTwitter,
-	FaGithub,
-	FaLinkedin,
-	FaMapMarkerAlt,
-	FaEnvelope,
-} from "react-icons/fa";
+	Facebook as FacebookIcon,
+	Instagram as InstagramIcon,
+	Twitter as TwitterIcon,
+	GitHub as GitHubIcon,
+	LinkedIn as LinkedInIcon,
+	Place as PlaceIcon,
+	Email as EmailIcon,
+} from "@mui/icons-material";
 
 const Footer = () => {
 	return (
-		<footer
-			className={`flex flex-col  align-center ${styles.footer}`}
-		>
+		<footer className={`${styles.footer}`}>
 			{/* contains logo, website name and contact info */}
-			<div className="flex flex-col align-center">
+			<Grid
+				container
+				spacing={2}
+			>
 				{/* contains logo and name so they can be positioned adjacent */}
-				<div className="flex justify-center mt-4">
-					<Logo />
-					<h1 className="ml-1">PKUnity</h1>
-				</div>
+				<Grid
+					item
+					xs={12}
+				>
+					<Grid
+						container
+						spacing={2}
+						mb={1}
+						justifyContent="center"
+					>
+						<Grid item>
+							<Logo />
+						</Grid>
+						<Grid item>
+							<Typography
+								variant="h2"
+								className="ml-1"
+							>
+								PKUnity
+							</Typography>
+						</Grid>
+					</Grid>
+				</Grid>
 
 				{/* contact info */}
-				<ul className={`mt-3 ${styles.noTextDecor}`}>
-					<li className="mb-1 flex align-center">
-						<FaMapMarkerAlt className="mr-1" /> Charlotte, NC
-					</li>
-					<li className="mb-1 flex align-center">
-						<FaEnvelope className="mr-1" /> info@pkunity.com
-					</li>
-				</ul>
-				<Link href="/signup">
-					<Button padding=".5em 3em">Create an account</Button>
-				</Link>
-			</div>
+				<Grid
+					item
+					xs={12}
+				>
+					<Grid
+						container
+						direction="column"
+						alignContent="center"
+						justifyContent="center"
+						rowSpacing={1}
+					>
+						<Grid
+							item
+							sx={{ position: "center" }}
+						>
+							<Grid
+								container
+								justifyContent="center"
+								alignItems="center"
+							>
+								<Grid item>
+									<PlaceIcon className="mr-1" />
+								</Grid>
+								<Grid item>Charlotte, NC</Grid>
+							</Grid>
+						</Grid>
+						<Grid item>
+							<Grid
+								container
+								justifyContent="center"
+								alignItems="center"
+							>
+								<Grid item>
+									<EmailIcon className="mr-1" />
+								</Grid>
+								<Grid item>info@pkunity.com</Grid>
+							</Grid>
+						</Grid>
+						<Grid
+							item
+							mt={2}
+						>
+							<Button
+								variant="contained"
+								color="secondary"
+								href="./signup"
+							>
+								Create an account
+							</Button>
+						</Grid>
+					</Grid>
+				</Grid>
+			</Grid>
 
 			{/* Links */}
-			<div className="flex justify-space-around mt-4 border-bottom pb-4 w-100">
-				<div className="flex flex-col align-center">
-					<h2 className={styles.linksTitle}>QUICK LINKS</h2>
-					<ul className={`flex align-center flex-col mb-1 ${styles.noBullets}`}>
-						<li>
-							<Link href="/">Home</Link>
-						</li>
-						<li>
-							<Link href="/">About</Link>
-						</li>
-						<li>
-							<Link href="/">Dashboard</Link>
-						</li>
-						<li>
-							<Link href="/">Account</Link>
-						</li>
-						<li>
-							<Link href="/">Contact</Link>
-						</li>
-					</ul>
-				</div>
-
-				<div className="flex flex-col align-center">
-					<h2 className={styles.linksTitle}>GET INVOLVED</h2>
-					<ul className={`flex align-center flex-col mb-1 ${styles.noBullets}`}>
-						<li>
-							<Link href="/">Contribute</Link>
-						</li>
-						<li>
-							<Link href="/">Feedback</Link>
-						</li>
-						<li>
-							<Link href="/">Donate</Link>
-						</li>
-					</ul>
-				</div>
-			</div>
-
-			<div className="mt-3 grid-container">
-				<Link
-					href="#"
-					className="col-6 text-center"
+			<Grid
+				container
+				spacing={2}
+				mt={2}
+				pb={2}
+				className="border-bottom "
+			>
+				<Grid
+					item
+					xs={6}
 				>
-					Terms of Service
-				</Link>
-				<Link
-					href="#"
-					className="col-6 text-center"
-				>
-					Privacy Policy
-				</Link>
-				<p className="col-12 text-center">
-					&copy; 2023 PKUnity. All rights reserved.{" "}
-				</p>
-			</div>
+					<Typography
+						variant="h5"
+						textAlign="center"
+					>
+						QUICK LINKS
+					</Typography>
+					<Grid
+						container
+						direction="column"
+						justifyContent="center"
+						alignItems="center"
+					>
+						<Grid item>
+							<Link
+								href="/"
+								className={`${styles.noBullets}`}
+							>
+								Home
+							</Link>
+						</Grid>
+						<Grid item>
+							<Link
+								href="/"
+								className={`${styles.noBullets}`}
+							>
+								About
+							</Link>
+						</Grid>
+						<Grid item>
+							<Link
+								href="/"
+								className={`${styles.noBullets}`}
+							>
+								Dashboard
+							</Link>
+						</Grid>
+						<Grid item>
+							<Link
+								href="/"
+								className={`${styles.noBullets}`}
+							>
+								Account
+							</Link>
+						</Grid>
+						<Grid item>
+							<Link
+								href="/"
+								className={`${styles.noBullets}`}
+							>
+								Contact
+							</Link>
+						</Grid>
+					</Grid>
+				</Grid>
 
-			<div className={`flex justify-space-around mt-3 ${styles.socials}`}>
-				<FaFacebookSquare />
-				<FaInstagram />
-				<FaTwitter />
-				<FaGithub />
-				<FaLinkedin />
-			</div>
+				<Grid
+					item
+					xs={6}
+				>
+					<Typography
+						variant="h5"
+						textAlign="center"
+					>
+						GET INVOLVED
+					</Typography>
+					<Grid
+						container
+						direction="column"
+						justifyContent="center"
+						alignItems="center"
+					>
+						<Grid item>
+							<Link
+								href="/"
+								className={`${styles.noBullets}`}
+							>
+								Contribute
+							</Link>
+						</Grid>
+						<Grid item>
+							<Link
+								href="/"
+								className={`${styles.noBullets}`}
+							>
+								Feedback
+							</Link>
+						</Grid>
+						<Grid item>
+							<Link
+								href="/"
+								className={`${styles.noBullets}`}
+							>
+								Donate
+							</Link>
+						</Grid>
+					</Grid>
+				</Grid>
+			</Grid>
+
+			<Grid
+				container
+				mt={1}
+				mb={2}
+			>
+				<Grid
+					item
+					xs={6}
+					textAlign="center"
+				>
+					<Link href="#">Terms of Service</Link>
+				</Grid>
+				<Grid
+					item
+					xs={6}
+					textAlign="center"
+				>
+					<Link href="#">Privacy Policy</Link>
+				</Grid>
+				<Grid
+					item
+					xs={12}
+					mt={1}
+				>
+					<Typography textAlign="center">
+						&copy; 2023 PKUnity. All rights reserved.{" "}
+					</Typography>
+				</Grid>
+			</Grid>
+
+			<Grid
+				container
+				justifyContent="space-around"
+				className={` ${styles.socials}`}
+			>
+				<Grid item>
+					<FacebookIcon />
+				</Grid>
+				<Grid item>
+					<InstagramIcon />
+				</Grid>
+				<Grid item>
+					<TwitterIcon />
+				</Grid>
+				<Grid item>
+					<GitHubIcon />
+				</Grid>
+				<Grid item>
+					<LinkedInIcon />
+				</Grid>
+			</Grid>
 		</footer>
 	);
 };

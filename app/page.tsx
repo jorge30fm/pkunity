@@ -8,14 +8,19 @@ import {
 	FaBook,
 	FaArrowRight,
 } from "react-icons/fa";
-import Link from "next/link";
-import logo from "@/public/logo.svg";
+import {
+	Analytics as AnalyticsIcon,
+	Create as CreateIcon,
+	Chat as ChatIcon,
+	Restaurant as RestaurantIcon,
+	Newspaper as NewspaperIcon,
+	TableChart as TableChartIcon,
+} from "@mui/icons-material";
 //styles
 import styles from "./page.module.css";
 
 //components
 import LandingNav from "@/components/layout/LandingNav/LandingNav";
-
 import Footer from "@/components/layout/Footer/Footer";
 import Card from "@/components/ui/cards/mainFeatures/mainFeatures";
 
@@ -29,37 +34,37 @@ const Home = () => {
 
 	const cardsData = [
 		{
-			logo: <FaChartBar />,
+			logo: <AnalyticsIcon sx={{fontSize:'4em'}}/>,
 			title: "Track",
 			paragraph:
 				"Monitor and track daily food intake and PHE levels for effective PKU management.",
 		},
 		{
-			logo: <FaPencilAlt />,
+			logo: <CreateIcon sx={{fontSize:'4em'}}/>,
 			title: "Post",
 			paragraph:
 				"Share posts and images in a newsfeed to stay updated with the latest community updates.",
 		},
 		{
-			logo: <FaComment />,
+			logo: <ChatIcon sx={{fontSize:'4em'}}/>,
 			title: "Chat",
 			paragraph:
 				"Connect and interact with other users through real-time chat. Build your community!",
 		},
 		{
-			logo: <FaUtensils />,
+			logo: <RestaurantIcon sx={{fontSize:'4em'}}/>,
 			title: "Cook",
 			paragraph:
 				"Explore a collection of PKU-friendly recipes, contribute your own, and discover new meal options.",
 		},
 		{
-			logo: <FaNewspaper />,
+			logo: <NewspaperIcon sx={{fontSize:'4em'}}/>,
 			title: "News",
 			paragraph:
 				"Stay informed with the latest PKU news and access relevant articles for up-to-date information.",
 		},
 		{
-			logo: <FaBook />,
+			logo: <TableChartIcon sx={{fontSize:'4em'}}/>,
 			title: "Logbook",
 			paragraph:
 				"Find information about protein content in foods to help with meal and levels tracking",
@@ -73,7 +78,7 @@ const Home = () => {
 			<Container
 				maxWidth="xl"
 				sx={{
-					backgroundImage: `url('./hero.png')`,
+					backgroundImage: `url('./hero.jpg')`,
 					backgroundRepeat: "no-repeat",
 					backgroundPosition: "center",
 					backgroundSize: "cover",
@@ -130,7 +135,7 @@ const Home = () => {
 					</Button>
 				</Box>
 				{/* empty box to adjust positioning for the next element */}
-				<Box sx={{ height: "30rem" }}></Box>
+				<Box sx={{ height: "29rem" }}></Box>
 				{/* PKU information element */}
 				<Box className={` pt-3 pb-3 pr-4 pl-4 ${styles.card} ${styles.glass}`}>
 					<Typography
@@ -217,6 +222,7 @@ const Home = () => {
 						<Button
 							variant="contained"
 							sx={{ mr: "auto", ml: "auto" }}
+							href="/signup"
 						>
 							<Typography sx={{ color: "white", textAlign: "center" }}>
 								Join us and share your story
