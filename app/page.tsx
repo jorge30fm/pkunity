@@ -1,13 +1,5 @@
 "use client";
-import {
-	FaChartBar,
-	FaPencilAlt,
-	FaComment,
-	FaUtensils,
-	FaNewspaper,
-	FaBook,
-	FaArrowRight,
-} from "react-icons/fa";
+
 import {
 	Analytics as AnalyticsIcon,
 	Create as CreateIcon,
@@ -34,37 +26,37 @@ const Home = () => {
 
 	const cardsData = [
 		{
-			logo: <AnalyticsIcon sx={{fontSize:'4em'}}/>,
+			logo: <AnalyticsIcon sx={{ fontSize: "4em" }} />,
 			title: "Track",
 			paragraph:
 				"Monitor and track daily food intake and PHE levels for effective PKU management.",
 		},
 		{
-			logo: <CreateIcon sx={{fontSize:'4em'}}/>,
+			logo: <CreateIcon sx={{ fontSize: "4em" }} />,
 			title: "Post",
 			paragraph:
 				"Share posts and images in a newsfeed to stay updated with the latest community updates.",
 		},
 		{
-			logo: <ChatIcon sx={{fontSize:'4em'}}/>,
+			logo: <ChatIcon sx={{ fontSize: "4em" }} />,
 			title: "Chat",
 			paragraph:
 				"Connect and interact with other users through real-time chat. Build your community!",
 		},
 		{
-			logo: <RestaurantIcon sx={{fontSize:'4em'}}/>,
+			logo: <RestaurantIcon sx={{ fontSize: "4em" }} />,
 			title: "Cook",
 			paragraph:
 				"Explore a collection of PKU-friendly recipes, contribute your own, and discover new meal options.",
 		},
 		{
-			logo: <NewspaperIcon sx={{fontSize:'4em'}}/>,
+			logo: <NewspaperIcon sx={{ fontSize: "4em" }} />,
 			title: "News",
 			paragraph:
 				"Stay informed with the latest PKU news and access relevant articles for up-to-date information.",
 		},
 		{
-			logo: <TableChartIcon sx={{fontSize:'4em'}}/>,
+			logo: <TableChartIcon sx={{ fontSize: "4em" }} />,
 			title: "Logbook",
 			paragraph:
 				"Find information about protein content in foods to help with meal and levels tracking",
@@ -130,6 +122,7 @@ const Home = () => {
 						color="secondary"
 						variant="contained"
 						size="large"
+						href="./signup"
 					>
 						Join our Community!
 					</Button>
@@ -222,7 +215,7 @@ const Home = () => {
 						<Button
 							variant="contained"
 							sx={{ mr: "auto", ml: "auto" }}
-							href="/signup"
+							href="./signup"
 						>
 							<Typography sx={{ color: "white", textAlign: "center" }}>
 								Join us and share your story

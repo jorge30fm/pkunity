@@ -1,4 +1,5 @@
 "use client";
+import * as React from "react";
 //Manage state imports
 import { useState } from "react";
 import type { RootState } from "../GlobalRedux/store";
@@ -9,16 +10,30 @@ import {
 	setEmail,
 	setConfimPassword,
 } from "../GlobalRedux/Features/signup/signupSlice";
-// components
+
+// internal components
 import SignupButtons from "@/components/ui/signupButtons/signupButtons";
-import Button from "@/components/ui/button/Button";
 import Logo from "@/components/logo/Logo";
+
+//external components
+import {
+	Grid,
+	Button,
+	Box,
+	TextField,
+	FormControl,
+	InputAdornment,
+	IconButton,
+} from "@mui/material";
+
 // styles
 import styles from "./page.module.css";
+
 // Icons
 import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
-
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 const SignupPage = () => {
+	//manage textfields state
 	const dispatch = useDispatch();
 	const [formValues, setFormValues] = useState({
 		firstName: "",
@@ -45,135 +60,239 @@ const SignupPage = () => {
 	const { firstName, lastName, email, password, confirmPassword } = useSelector(
 		(state: RootState) => state.signup
 	);
+	// password visibility
+	const [showPassword, setShowPassword] = React.useState(false);
+
+	const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+	const handleMouseDownPassword = (
+		event: React.MouseEvent<HTMLButtonElement>
+	) => {
+		event.preventDefault();
+	};
 
 	return (
-		<div className="bg-forest-green">
-			<div className={`grid-container pt-4 ${styles.section}`}>
-				<span className="col-12 ml-auto mr-auto">
-					<Logo
-						width="7rem"
-						height="7rem"
+		<Grid
+			sx={{
+				backgroundImage: `url("./gradient.jpg")`,
+				backgroundRepeat: "no-repeat",
+				backgroundPosition: "start",
+				backgroundSize: "cover",
+				height: "100vh",
+			}}
+			pt={4}
+		>
+			<Grid
+				container
+				direction="column"
+				justifyContent="center"
+				alignItems="center"
+			>
+				<Grid item>
+					<Box
+						sx={{
+							width: "7em",
+							height: "7em",
+							backgroundColor: "primary.main",
+							borderRadius: "50%",
+						}}
 					/>
-				</span>
+				</Grid>
 				{/* social media sign up buttons */}
-				<div className={`col-12 ${styles.socialsBtns}`}>
+				<Grid item>
 					<SignupButtons provider="apple" />
 					<SignupButtons provider="google" />
 					<SignupButtons provider="facebook" />
-				</div>
-				{/* adds a horizontal line with the word 'or' in the middle */}
-				<div
-					className={`col-12 flex justify-center ml-4 mr-4 ${styles.division}`}
-				>
-					<div className={` col-5 flex align-center ${styles.lineContainer}`}>
-						<div className={`${styles.line}`}></div>
-					</div>
-					<p className={` col-1 text-center ${styles.or}`}>or</p>
-					<div
-						className={` col-5 flex align-center mr-auto ${styles.lineContainer}`}
-					>
-						<div className={`${styles.line}`}></div>
-					</div>
-				</div>
-			</div>
-			<form
-				onSubmit={handleSubmit}
-				className=" ml-4 mr-4 pl-4 pr-4 mt-2"
+				</Grid>
+			</Grid>
+			<Box
+				mt={3}
+				p={2}
+				className={styles.formContainer}
+				mr={2}
+				ml={2}
+				pt={2}
 			>
-				{/* first and last name */}
-				<div className="grid-container no-gap col-12">
-					<label className={`col-12  ${styles.label}`}>Name</label>
-
-					<div
-						className={`flex justify-center align-center col-5 ${styles.inputWrapper}`}
+				<FormControl
+					component="form"
+					onSubmit={handleSubmit}
+				>
+					{/* first and last name */}
+					<Grid
+						container
+						justifyContent="space-between"
+						spacing={2}
 					>
-						<FaUserAlt className={`${styles.icon} ml-2`} />
-						<input
-							type="text"
-							placeholder="First"
-							className={`w-100 ${styles.formInput}`}
-							name="firstName"
-							value={formValues.firstName}
-							onChange={handleChange}
-						/>
-					</div>
-					<div
-						className={`flex justify-center align-center col-6 start-7 ${styles.inputWrapper}`}
+						<Grid
+							item
+							xs={6}
+						>
+							<TextField
+								required
+								variant="outlined"
+								id="firstName"
+								label="First Name"
+								placeholder="First Name"
+								InputProps={{
+									startAdornment: (
+										<InputAdornment position="start">
+											<FaUserAlt />
+										</InputAdornment>
+									),
+								}}
+								name="firstName"
+								value={formValues.firstName}
+								onChange={handleChange}
+							/>
+						</Grid>
+						<Grid
+							item
+							xs={6}
+						>
+							<TextField
+								required
+								variant="outlined"
+								id="lastName"
+								label="Last Name"
+								placeholder="Last Name"
+								InputProps={{
+									startAdornment: (
+										<InputAdornment position="start">
+											<FaUserAlt />
+										</InputAdornment>
+									),
+								}}
+								name="lastName"
+								value={formValues.lastName}
+								onChange={handleChange}
+							/>
+						</Grid>
+					</Grid>
+					<Grid
+						container
+						justifyContent="space-around"
+						rowSpacing={2}
+						mt={1}
 					>
-						<input
-							type="text"
-							placeholder="Last"
-							className={`w-75 ${styles.formInput}`}
-							name="lastName"
-							value={formValues.lastName}
-							onChange={handleChange}
-						/>
-					</div>
-				</div>
-				{/* email */}
-				<div className="grid-container no-gap col-12">
-					<label className={`col-12 ${styles.label}`}>Email</label>
-					<div
-						className={`flex justify-between align-center col-12 ${styles.inputWrapper}`}
-					>
-						<FaEnvelope className={`${styles.icon} ml-2`} />
-						<input
-							type="text"
-							placeholder="Email"
-							className={`${styles.formInput}`}
-							name="email"
-							value={formValues.email}
-							onChange={handleChange}
-						/>
-					</div>
-				</div>
-				{/* password */}
-				<div className="grid-container no-gap col-12 in">
-					<label className={`col-12 ${styles.label}`}>Password</label>
-					<div
-						className={`flex justify-between align-center col-12 ${styles.inputWrapper}`}
-					>
-						<FaLock className={`${styles.icon} ml-2`} />
-						<input
-							type="password"
-							placeholder="Password"
-							className={`col-12 ${styles.formInput}`}
-							name="password"
-							value={formValues.password}
-							onChange={handleChange}
-						/>
-					</div>
-				</div>
-				{/* confirm password */}
-				<div className="grid-container no-gap col-12">
-					<label className={`col-12 ${styles.label}`}>Confirm Password</label>
-					<div
-						className={`flex justify-between align-center col-12 ${styles.inputWrapper}`}
-					>
-						<FaLock
-							color="rgba(0, 0, 0, 0.5)"
-							className={`${styles.icon} ml-2`}
-						/>
-						<input
-							type="password"
-							placeholder="Confirm Password"
-							className={`col-12 ${styles.formInput}`}
-							name="confirmPassword"
-							value={formValues.confirmPassword}
-							onChange={handleChange}
-						/>
-					</div>
-				</div>
-				<div className="mr-auto ml-auto mt-3 ">
-					<Button
-						padding=".8em 2em"
-						fontSize="1.2rem"
-					>
-						Sign up
-					</Button>
-				</div>
-			</form>
-		</div>
+						{/* email */}
+						<Grid
+							item
+							xs={12}
+						>
+							<TextField
+								required
+								fullWidth
+								variant="outlined"
+								type="email"
+								id="email"
+								label="Email"
+								placeholder="Email"
+								helperText="Enter a valid email."
+								InputProps={{
+									startAdornment: (
+										<InputAdornment position="start">
+											<FaUserAlt />
+										</InputAdornment>
+									),
+								}}
+								name="email"
+								value={formValues.email}
+								onChange={handleChange}
+							/>
+						</Grid>
+						{/* password[] */}
+						<Grid
+							item
+							xs={12}
+						>
+							<TextField
+								required
+								fullWidth
+								variant="outlined"
+								type="password"
+								id="password"
+								label="Password"
+								placeholder="Password"
+								InputProps={{
+									startAdornment: (
+										<InputAdornment position="start">
+											<FaUserAlt />
+										</InputAdornment>
+									),
+									endAdornment: (
+										<InputAdornment position="end">
+											<IconButton
+												aria-label="toggle password visibility"
+												onClick={handleClickShowPassword}
+												onMouseDown={handleMouseDownPassword}
+												edge="end"
+											>
+												{showPassword ? <VisibilityOff /> : <Visibility />}
+											</IconButton>
+										</InputAdornment>
+									),
+								}}
+								name="password"
+								value={formValues.password}
+								onChange={handleChange}
+							/>
+						</Grid>
+						{/* confirm password */}
+						<Grid
+							item
+							xs={12}
+						>
+							<TextField
+								required
+								fullWidth
+								variant="outlined"
+								type="password"
+								id="confirmPassword"
+								label="Confirm Password"
+								placeholder="Confirm Password"
+								InputProps={{
+									startAdornment: (
+										<InputAdornment position="start">
+											<FaUserAlt />
+										</InputAdornment>
+									),
+									endAdornment: (
+										<InputAdornment position="end">
+											<IconButton
+												aria-label="toggle password visibility"
+												onClick={handleClickShowPassword}
+												onMouseDown={handleMouseDownPassword}
+												edge="end"
+											>
+												{showPassword ? <VisibilityOff /> : <Visibility />}
+											</IconButton>
+										</InputAdornment>
+									),
+								}}
+								name="confirmPassword"
+								value={formValues.confirmPassword}
+								onChange={handleChange}
+							/>
+						</Grid>
+						{/* sign up button */}
+						<Grid
+							item
+							xs={6}
+							mt={2}
+						>
+							<Button
+								color="secondary"
+								sx={{ width: "100%" }}
+								variant="contained"
+								size="large"
+							>
+								Sign up
+							</Button>
+						</Grid>
+					</Grid>
+				</FormControl>
+			</Box>
+		</Grid>
 	);
 };
 
